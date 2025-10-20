@@ -1,1 +1,0 @@
-# qr-code-open-ticket
