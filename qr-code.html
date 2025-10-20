@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code - Open Ticket</title>
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
+
+    <div class="bg-white flex flex-col justify-center items-center shadow-lg rounded-2xl p-8 text-center">
+        <h1 class="text-2xl font-bold text-gray-800 mb-4">Acesse o site Open Ticket</h1>
+
+        <!-- Área onde o QR Code será renderizado -->
+        <div id="qrcode" class="mx-auto mb-4"></div>
+
+        <p class="text-gray-600 mb-4">
+            Escaneie o QR Code com a câmera do seu celular<br>ou clique no link abaixo:
+        </p>
+        <a href="https://paulovieiradasilva.github.io/open-ticket/" class="text-blue-600 font-medium hover:underline">
+            https://paulovieiradasilva.github.io/open-ticket/
+        </a>
+    </div>
+
+    <!-- Script do gerador de QR Code -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+    <script>
+        // Gera o QR Code
+        new QRCode(document.getElementById("qrcode"), {
+            text: "https://paulovieiradasilva.github.io/open-ticket/",
+            width: 200,
+            height: 200,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+</body>
+
+</html>
